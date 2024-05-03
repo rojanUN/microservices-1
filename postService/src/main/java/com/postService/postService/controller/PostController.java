@@ -9,17 +9,22 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/post")
-public class postController {
+public class PostController {
     public WebClient webClient;
 
-    public postController(){
+    public PostController(){
         this.webClient = WebClient.create("http://localhost:8080/member/get-data");
     }
-    @GetMapping("/get-data")
-    public Mono<String> getPostData(){
+    @GetMapping("/get-member-data")
+    public Mono<String> getMemberData(){
         return webClient.get()
                 .uri("http://localhost:8080/member/get-data")
                 .retrieve()
                 .bodyToMono(String.class);
+    }
+
+    @GetMapping("/get-data")
+    public String getPostData(){
+        return "this is post data";
     }
 }
