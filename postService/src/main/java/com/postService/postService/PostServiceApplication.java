@@ -13,9 +13,4 @@ public class PostServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PostServiceApplication.class, args);
 	}
-//	@RequestMapping(value = "/")
-//	public String home(){
-//		return "this is postService";
-//	}
-
 }
