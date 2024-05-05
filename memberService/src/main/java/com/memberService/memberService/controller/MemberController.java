@@ -43,4 +43,13 @@ public class MemberController {
                 .bodyToMono(new ParameterizedTypeReference<List<PostDto>>() {
                 });
     }
+    @PostMapping("/add-post")
+    public void addPost(@RequestBody PostDto postDto){
+        webClient.post()
+                .uri("http://10.7.1.24:9090/post/add-post")
+                .body(Mono.just(postDto), PostDto.class)
+                .retrieve()
+                .bodyToMono(Void.class)
+                .subscribe();
+    }
 }

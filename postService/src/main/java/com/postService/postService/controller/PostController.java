@@ -54,5 +54,5 @@ public class PostController {
     }
 }
 
-///database haru seperate garna milena. seperate database haru am relationship haru establish nai garna mildaina
+//database haru seperate garna milena. seperate database haru am relationship haru establish nai garna mildaina
 
