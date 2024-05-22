@@ -35,6 +35,7 @@ public class MemberController {
     public void addMember(@RequestBody MemberDto memberDto){
         memberService.addMember(memberDto);
     }
+
     @GetMapping("/get-posts")
     public Mono<List<PostDto>> getPosts(){
         return webClient.get()
